@@ -1,0 +1,66 @@
+<?php
+/**
+ * Implements hook_install().
+ */
+function student_management_install() {
+  $connection = \Drupal::service('database');
+  $schema = $connection->schema();
+
+  // Create the 'student_management_students' table.
+  $table_name = $connection->prefixTables('student_management_students');
+  if (!$schema->tableExists($table_name)) {
+    $fields = [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'date' =>[
+        'type' => 'date',
+        'not null' => TRUE,
+      ],
+    ];
+
+    $schema->createTable($table_name, $fields, ['primary key' => ['id']]);
+  }
+
+  // Create the 'student_management_attendance' table.
+  $attendance_table_name = $connection->prefixTables('student_management_attendance');
+  if (!$schema->tableExists($attendance_table_name)) {
+    $fields = [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'student_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'date' => [
+        'type' => 'date',
+        'not null' => TRUE,
+      ],
+      'status' => [
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+    ];
+
+    $foreign_keys = [
+      'student_id' => [
+        'table' => 'student_management_students',
+        'columns' => ['student_id' => 'id'],
+      ],
+    ];
+
+    $schema->createTable($attendance_table_name, $fields, ['primary key' => ['id'], 'foreign keys' => $foreign_keys]);
+  }
+}

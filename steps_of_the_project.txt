@@ -1,0 +1,4 @@
+1. create a custom module { for-> }
+2. create a custom block { for-> }
+3. create a custom theme { for-> }
+4. place block in required region in drupal and add content from the custom module.

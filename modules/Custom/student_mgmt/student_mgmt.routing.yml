@@ -1,0 +1,32 @@
+student_mgmt.add_students:
+  path: '/student-management/add'
+  defaults:
+    _controller: '\Drupal\student_mgmt\Controller\StudentMgmtController::addStudents'
+    _title: 'Add Students'
+  requirements:
+    _permission: 'access content'
+
+student_mgmt.attendance:
+  path: '/student-management/attendance'
+  defaults:
+    _controller: '\Drupal\student_mgmt\Controller\StudentMgmtController::attendanceForm'
+    _title: 'Student Attendance'
+  requirements:
+    _permission: 'access content'
+
+student_mgmt.reports:
+  path: '/student-management/reports'
+  defaults:
+    _controller: '\Drupal\student_mgmt\Controller\StudentMgmtController::attendanceReports'
+    _title: 'Attendance Reports'
+  requirements:
+    _permission: 'access content'
+
+student_mgmt.attendance_report_display:
+  path: '/student-management/attendance-report/{date}'
+  defaults:
+    _controller: '\Drupal\student_mgmt\Controller\AttendanceReportDisplay::displayAttendanceReport'
+    _title: 'Attendance Report'
+  requirements:
+    _permission: 'access content'
+    date: '\d{4}-\d{2}-\d{2}'

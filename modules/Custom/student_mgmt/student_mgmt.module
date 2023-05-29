@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Implements hook_help().
+ */
+
+/**
+ * Implements hook_help().
+ */
+function student_management_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.student_management':
+      $output = '';
+      // Add your help text here if needed.
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function student_management_theme() {
+  return [
+    'student_management_attendance_report' => [
+      'variables' => [
+        'report' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments() to attach custom JavaScript file.
+ */
+function student_mgmt_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'student_mgmt/student_mgmt-js';
+}

@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Implement hook_schema().
+ */
+
+function custom_form_schema() {
+    $schema['info'] = [
+        'description' => 'contains user details',
+        'fields' => [
+            'name' => [
+                'description' => 'Holds the name',
+                'type' => 'varchar',
+                'not null' => true,
+                
+            ],
+            'attendance' => [
+                'description' => 'Attendance',
+                'type' => 'Binary',
+                
+                'not null' => true,
+            ],
+        ],
+        
+    ];
+    return $schema;
+}
+function custom_form_install(){
+    $rows = [
+        ['name' => 'Suriya R'],
+        ['attendance' => '1'],
+    ];
+
+    $db_connection = \Drupal::database();
+
+    if($db_connection->schema()->tableExists('info')){
+        foreach($rows as $row){
+            $db_connection->insert('info')->fields($row)->execute();
+        }
+    }
+}

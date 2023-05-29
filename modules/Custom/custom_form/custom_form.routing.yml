@@ -1,0 +1,23 @@
+custom-user-form.createStudentsList:
+  path: '/attendance'
+  defaults:
+    _form: '\Drupal\custom_form\Form\CustomUserDetails'
+    _title: 'Student details form'
+  requirements:
+    _permission: 'access content'
+
+custom-user-form.getStudentsList:
+  path: '/student_list'
+  defaults:
+    _title: 'info table'
+    _controller: '\Drupal\custom_form\Controller\CustomFormController::show_details'
+  requirements:
+    _permission: 'access content'
+
+custom-user-form.getAllStuds:
+  path: '/all_student_list'
+  defaults:
+    _title: 'All students list'
+    _form: '\Drupal\custom_form\Form\CustomAllStuds'
+  requirements:
+    _permission: 'access content'

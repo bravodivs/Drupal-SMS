@@ -1,0 +1,7 @@
+name: 'Student Management'
+type: module
+description: 'Custom module for student management system'
+core_version_requirement: ^8 || ^9
+package: Custom
+libraries:
+  - student_mgmt/attendance

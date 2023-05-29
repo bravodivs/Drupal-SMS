@@ -1,0 +1,5 @@
+student_mgmt-js:
+  js:
+    js/student_mgmt.js: {}
+  dependencies:
+    - core/jquery
