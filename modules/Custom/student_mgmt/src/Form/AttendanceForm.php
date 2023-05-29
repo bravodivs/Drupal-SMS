@@ -47,22 +47,22 @@ class AttendanceForm extends FormBase
         '#type' => 'item',
         '#markup' => $student->name,
       ];
-      $form['students'][$student_id]['status'] = [
-        '#type' => 'button',
-        '#value' => $this->t($status),
-        '#name' => 'status-' . $student_id,
-        '#ajax' => [
-          'callback' => '::toggleStatusAjaxCallback',
-          'event' => 'click',
-          'wrapper' => 'attendance-form',
-        ],
-        '#attributes' => [
-          'class' => ['attendance-status-button'],
-          'data-student-id' => $student_id,
-          'data-status' => $status,
-        ],
-        '#default_value' => $status,
-      ];
+      // $form['students'][$student_id]['status'] = [
+      //   '#type' => 'button',
+      //   '#value' => $this->t($status),
+      //   '#name' => 'status-' . $student_id,
+      //   '#ajax' => [
+      //     'callback' => '::toggleStatusAjaxCallback',
+      //     'event' => 'click',
+      //     'wrapper' => 'attendance-form',
+      //   ],
+      //   '#attributes' => [
+      //     'class' => ['attendance-status-button'],
+      //     'data-student-id' => $student_id,
+      //     'data-status' => $status,
+      //   ],
+      //   '#default_value' => $status,
+      // ];
 
       $form['students'][$student_id]['#status_value'] = $status;
 
@@ -88,7 +88,7 @@ class AttendanceForm extends FormBase
       '#submit' => ['::show_report'],
       '#attributes' => array('onclick' => 'return show_report();'),
     ];
-
+    $form['#attached']['library'][]='student_mgmt/student_mgmt-css';
 
     return $form;
   }

@@ -5,3 +5,4 @@ core_version_requirement: ^8 || ^9
 package: Custom
 libraries:
   - student_mgmt/attendance
+  - student_mgmt/student_mgmt-css

@@ -1,0 +1,19 @@
+table, th, td{
+    border: 1px solid black;
+    color:black;
+    width:max-content;
+    text-align: center;
+}
+.form-wrapper{
+    background-color: bisque;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.form-wrapper div, .form-wrapper input{
+    text-align: center;
+    text-transform: capitalize;
+}

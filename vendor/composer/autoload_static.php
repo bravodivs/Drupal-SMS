@@ -42,6 +42,10 @@ class ComposerStaticInit3ffe9ff26cb3af9d2cec7be43f39d365
     );
 
     public static $prefixLengthsPsr4 = array (
+        't' => 
+        array (
+            'tubalmartin\\CssMin\\' => 19,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -131,6 +135,10 @@ class ComposerStaticInit3ffe9ff26cb3af9d2cec7be43f39d365
     );
 
     public static $prefixDirsPsr4 = array (
+        'tubalmartin\\CssMin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tubalmartin/cssmin/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -261,8 +269,8 @@ class ComposerStaticInit3ffe9ff26cb3af9d2cec7be43f39d365
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (

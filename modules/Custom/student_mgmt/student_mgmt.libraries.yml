@@ -3,3 +3,9 @@ student_mgmt-js:
     js/student_mgmt.js: {}
   dependencies:
     - core/jquery
+
+student_mgmt-css:
+  version: 1.x
+  css:
+    theme:
+      css/styles.css: {}

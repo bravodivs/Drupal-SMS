@@ -53,6 +53,8 @@ class AttendanceReportDisplay extends ControllerBase
     ];
 
     $form['attendance_report'] = $table;
+    $form['#attached']['library'][]='student_mgmt/student_mgmt-css';
+    // $types['table']['#attached']['library'][]='student_mgmt/student_mgmt-css';
 
     return $form;
   }
