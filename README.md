@@ -1,3 +1,4 @@
+**Student Management System in Drupal**
 Using the custom module: student_mgmt
 Goto your drupal site->extend->search for student management->install
 the main page for this is /student-management/add
